@@ -38,14 +38,19 @@ const social = [
     link: "https://www.linkedin.com/in/riyasyash/",
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/riyasyash/",
+    name: "Medium",
+    icon: "book",
+    link: "https://medium.com/@riyasyash",
   },
   {
-    name: "Medium",
-    icon: "medium",
-    link: "https://medium.com/@riyasyash",
+    name: "Instagram",
+    icon: "gallery",
+    link: "https://www.instagram.com/riyasyash.lens/",
+  },
+  {
+    name: "X",
+    icon: "x",
+    link: "https://x.com/riyasyash",
   },
 ];
 
