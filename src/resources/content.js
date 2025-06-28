@@ -1,16 +1,16 @@
 import { Logo } from "@once-ui-system/core";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Riyas",
+  lastName: "P",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  role: "Staff Software Engineer",
+  avatar: "/images/author.jpg",
+  email: "riyasyash@gmail.com",
+  location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Hindi", "Malayalam", "Tamil", "Kannada", "French"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -30,22 +30,22 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/riyasyash",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/riyasyash/",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/riyasyash/",
   },
   {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${person.email}`,
+    name: "Medium",
+    icon: "medium",
+    link: "https://medium.com/@riyasyash",
   },
 ];
 
@@ -55,16 +55,15 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Engineer at heart, innovator by habit.</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
+    title: <>Recent project: <strong className="ml-4">Cluster Orchestrator</strong></>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Riyas, a Staff Software Engineer at <a href="https://www.harness.io/">Harness Inc</a>, I write code, design systems, and think like a product owner. <br/>I love building things that solve real-world problems and make a meaningful difference.
     </>
   ),
 };
@@ -83,16 +82,16 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/riyasyash",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+         I enjoy building things that are thoughtful, reliable, and genuinely useful.
+Whether it’s improving developer experience, scaling systems, or simplifying product workflows — I care deeply about the why behind every line of code.
+I’m not just writing backend logic or frontend views — I’m helping shape products with empathy and clarity.
       </>
     ),
   },
@@ -101,18 +100,19 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Harness.io",
+        timeframe: "2020 Nov- Present",
+        role: "Staff Software Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Developed Kubernetes Cluster Orchestrator from scratch for bridging gaps in existing node autoscaling solutions like Karpenter and Cluster Autoscaler. Customers can now make use of more spot machines in the cluster and save a bomb
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Developed Kuberenetes AutoStopping Solution from scratch for scaling down Kubernetes workloads when they are not in use, saving more than 70% of Non production cloud cost.
           </>,
+          <>
+            Mentored engineers across backend, infra, and product teams, fostering a hands-on engineering culture.
+          </>
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -125,19 +125,31 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Lightwing.io",
+        timeframe: "2020 July - 2022 Nov",
+        role: "Founding Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Designed AutoStopping solution for AWS ec2 and DigitalOcean Droplets saving them more than 70% of Non Production Cloud Cost
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+           Being one of the Founding Engineers in an early stage startup in the cloud cost optimization space is exciting and challenging. I have the opportunity to interact with the end users to understand their varied usecases and problems to build and shape a product which makes enormous impacts on their cloud usage.
           </>,
         ],
+        images: [],
+      },
+      {
+        company: "Sahaj Software",
+        timeframe: "2016 May - 2020 July",
+        role: "Solution Consultant (FullStack Engineer)",
+        achievements: [
+          <>
+          Re-architected a legacy monolith into a modular, Python-based microservices backend powering a dynamic publication workflow engine. Enabled document versioning, asset management, and runtime composition of microservice pipelines tailored to publishing requirements — all fresh out of college.          </>,
+          <>
+Built a B2B analytics platform delivering customizable sales and hiring enablement dashboards, with multi-tiered access based on user subscription. Designed robust filtering, search, and OAuth integration to securely expose data via client-facing apps.</>,
+<>Developed a Jupyter-powered platform for data science teams to build, test, and deploy analytical solutions. Enabled users to write code in any Jupyter-supported language, package their work as Docker images, and deploy directly from notebooks.</>,
+<>Engineered a consumer-facing app that collects real-time vehicle telemetry and translates it into actionable insights and usage reports. Personalized feedback based on driving patterns and vehicle models to enhance user experience and safety.</>
+],
         images: [],
       },
     ],
@@ -147,12 +159,8 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "University of Calicut",
+        description: <>Computer Science and Engineering</>,
       },
     ],
   },
@@ -161,35 +169,44 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "Languages & Frameworks",
+        description: <>Golang, Python, TypeScript, Java, Ruby, Shell, React, Next.js, Flutter</>,
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-02.jpg",
+          //   alt: "Project image",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "Cloud & DevOps",
+        description: <>Kubernetes, AWS, GCP, Azure, Terraform, Helm, Docker, Nginx, Ansible</>,
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        ],
+      },
+      {
+        title: "Kubernetes Ecosystem",
+        description: <>Karpenter, Custom Controllers, Operator Framework, Kyverno</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+        ],
+      },
+      {
+        title: "Databases, Caching & Queues",
+        description: <>PostgreSQL, MySQL, Redis, SQLite, RabbitMQ, AsynQ, Faktory, Kafka</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+        ],
+      },
+      {
+        title: "Logging & Mintoring",
+        description: <>OpenTelemetry, Prometheus, Grafana, Loki, Thanos</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
         ],
       },
     ],
@@ -199,7 +216,7 @@ const about = {
 const blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Build, Break, Reflect",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -208,8 +225,8 @@ const blog = {
 const work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  title: `Engineering That Shipped`,
+  description: `Here’s a look at the systems, products, and platforms I’ve helped build`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
