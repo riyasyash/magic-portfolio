@@ -63,7 +63,7 @@ const home = {
   },
   subline: (
     <>
-      I'm Riyas, a Staff Software Engineer at <a href="https://www.harness.io/">Harness Inc</a>, I write code, design systems, and think like a product owner. <br/>I love building things that solve real-world problems and make a meaningful difference.
+      I'm Riyas, a Staff Software Engineer at <a href="https://www.harness.io/">Harness.io</a>, I write code, design systems, and think like a product owner. <br/>I love building things that solve real-world problems and make a meaningful difference.
     </>
   ),
 };
@@ -116,12 +116,12 @@ I’m not just writing backend logic or frontend views — I’m helping shape p
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
