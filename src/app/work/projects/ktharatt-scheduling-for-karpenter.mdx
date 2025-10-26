@@ -1,0 +1,29 @@
+---
+title: "Ktharatt: A Scheduler to Put Karpenter Nodepools to Sleep"
+publishedAt: "2025-10-26"
+summary: "Ktharatt lets you configure downtime schedules for your Karpenter Nodepools. Put your Nodepools to sleep based on cron schedules, so that you are not paying for nodes during off-hours"
+images:
+  - "/images/projects/ktharatt/image.png"
+team:
+link: "https://ktharatt.riyasyash.me"
+---
+
+## Overview
+
+Karpenter excels at scaling nodes dynamically to match workload demands, but it doesn't have built-in support for scheduled downtime. Many teams run non-production environments that don't need to run 24/7, yet they continue paying for idle nodes during nights, weekends, and holidays. Ktharatt solves this by introducing a Kubernetes controller that monitors cron-based schedules and automatically scales Karpenter Nodepools to zero (or a minimum specified capacity) during configured downtime windows—without requiring any changes to your existing deployment manifests or Karpenter configuration.
+
+This approach is particularly valuable for development and testing environments where teams follow predictable work schedules but are still billed for cloud resources around the clock. By putting nodepools to sleep during off-hours, organizations can achieve significant cost savings—often reducing non-production cluster costs by 40–70% while maintaining full availability during business hours.
+
+## Key Features
+
+- **Cron-based scheduling** for flexible uptime and downtime windows across different time zones.
+- **Per-Nodepool configuration** allowing granular control over which nodepools scale down and when.
+- **Zero-downtime transitions** by evicting workloads before scaling down nodepools.
+- **Multi-timezone support** with IANA timezone identifiers for global teams.
+- **Karpenter-native integration** that works seamlessly with existing Cluster Scaling configurations.
+- **Cost visibility** by tracking savings from scheduled downtime across nodepools.
+- **Graceful resume** that re-enables nodepools and restores workloads when schedules resume.
+
+---
+
+Get Started: [ktharatt project](https://ktharatt.riyasyash.me)

@@ -236,6 +236,30 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
+const achievements = {
+  path: "/achievements",
+  label: "Achievements",
+  title: `Things that I am Proud Of`,
+  description: `Here’s are the small things in life that I am proud of`,
+  images: [
+    {
+      src: "/images/achievements/lw-github.png",
+      alt: "More than 40 Lakhs lines of code contributed in Lightwing (Harness CCM) Project",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/achievements/autostopping-patent.png",
+      alt: "Received Patent for the AutoStopping Solution that we build from scratch",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/achievements/arctic-vault.png",
+      alt: "Arctic Code Vault Contributor",
+      orientation: "vertical",
+    },
+  ]
+};
+
 const gallery = {
   path: "/gallery",
   label: "Gallery",
@@ -287,4 +311,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, achievements };
