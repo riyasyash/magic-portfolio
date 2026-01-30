@@ -7,7 +7,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Staff Software Engineer",
-  avatar: "/images/author.jpg",
+  avatar: "/images/DP.png",
   email: "riyasyash@gmail.com",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Hindi", "Malayalam", "Tamil", "Kannada", "French"], // optional: Leave the array empty if you don't want to display languages
@@ -210,6 +210,13 @@ Built a B2B analytics platform delivering customizable sales and hiring enableme
       {
         title: "Logging & Mintoring",
         description: <>OpenTelemetry, Prometheus, Grafana, Loki, Thanos</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+        ],
+      },
+      {
+        title: "AI Landscape",
+        description: <>Ollama, Llama3, Multi Agent Systems</>,
         // optional: leave the array empty if you don't want to display images
         images: [
         ],
