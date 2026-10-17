@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Staff Software Engineer",
+  role: "Senior Staff Software Engineer",
   avatar: "/images/DP.png",
   email: "riyasyash@gmail.com",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -45,7 +45,7 @@ const social = [
   {
     name: "Instagram",
     icon: "gallery",
-    link: "https://www.instagram.com/riyasyash.lens/",
+    link: "https://www.instagram.com/between_terminals",
   },
   {
     name: "X",
@@ -68,7 +68,7 @@ const home = {
   },
   subline: (
     <>
-      I'm Riyas, a Staff Software Engineer at <a href="https://www.harness.io/">Harness.io</a>, I write code, design systems, and think like a product owner. <br/>I love building things that solve real-world problems and make a meaningful difference.
+      I'm Riyas, a Senior Staff Software Engineer at <a href="https://www.harness.io/">Harness.io</a>, I write code, design systems, and think like a product owner. <br/>I love building things that solve real-world problems with AI and make a meaningful difference.
     </>
   ),
 };
@@ -107,8 +107,14 @@ I’m not just writing backend logic or frontend views — I’m helping shape p
       {
         company: "Harness.io",
         timeframe: "2020 Nov- Present",
-        role: "Staff Software Engineer",
+        role: "Senior Staff Software Engineer",
         achievements: [
+          <>
+            Developed an engineering efficiency AI agent which auto tags the user AI sessions from different providers to corresponding JIRA tickets and optimised it using Zero-Shot classifier Laya.
+          </>,
+          <>
+            Developed AI Cost Governance Solution for managing and enforcing AI User Budgets across different providers. Scaled up to server 2000 internal users in the first month. 
+          </>,
           <>
             Developed Kubernetes Cluster Orchestrator from scratch for bridging gaps in existing node autoscaling solutions like Karpenter and Cluster Autoscaler. Customers can now make use of more spot machines in the cluster and save a bomb
           </>,
@@ -135,16 +141,16 @@ I’m not just writing backend logic or frontend views — I’m helping shape p
         role: "Founding Engineer",
         achievements: [
           <>
-            Designed AutoStopping solution for AWS ec2 and DigitalOcean Droplets saving them more than 70% of Non Production Cloud Cost
+            Designed AutoStopping solution for AWS ec2 and DigitalOcean Droplets saving customers more than 70% of Non Production Cloud Cost
           </>,
           <>
-           Being one of the Founding Engineers in an early stage startup in the cloud cost optimization space is exciting and challenging. I have the opportunity to interact with the end users to understand their varied usecases and problems to build and shape a product which makes enormous impacts on their cloud usage.
+           Being the founding engineer in an early stage startup in the cloud cost optimization space was exciting and challenging. I have the opportunity to interact with the end users to understand their varied usecases and problems to build and shape a product which makes enormous impacts on their cloud usage.
           </>,
         ],
         images: [],
       },
       {
-        company: "Sahaj Software",
+        company: "Sahaj.ai",
         timeframe: "2016 May - 2020 July",
         role: "Solution Consultant (FullStack Engineer)",
         achievements: [
@@ -165,7 +171,7 @@ Built a B2B analytics platform delivering customizable sales and hiring enableme
     institutions: [
       {
         name: "University of Calicut",
-        description: <>Computer Science and Engineering</>,
+        description: <>Bachelor of Technology in Computer Science and Engineering</>,
       },
     ],
   },
@@ -175,7 +181,7 @@ Built a B2B analytics platform delivering customizable sales and hiring enableme
     skills: [
       {
         title: "Languages & Frameworks",
-        description: <>Golang, Python, TypeScript, Java, Ruby, Shell, React, Next.js, Flutter</>,
+        description: <>Golang, Python, React, Ruby, Shell, Java, Next.js</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           // {
@@ -195,7 +201,7 @@ Built a B2B analytics platform delivering customizable sales and hiring enableme
       },
       {
         title: "Kubernetes Ecosystem",
-        description: <>Karpenter, Custom Controllers, Operator Framework, Kyverno</>,
+        description: <>Karpenter, Custom Controllers, Operator Framework, Ingress and Gateways</>,
         // optional: leave the array empty if you don't want to display images
         images: [
         ],
@@ -208,15 +214,15 @@ Built a B2B analytics platform delivering customizable sales and hiring enableme
         ],
       },
       {
-        title: "Logging & Mintoring",
-        description: <>OpenTelemetry, Prometheus, Grafana, Loki, Thanos</>,
+        title: "Logging & Monitoring",
+        description: <>OpenTelemetry, Prometheus, Grafana, Loki</>,
         // optional: leave the array empty if you don't want to display images
         images: [
         ],
       },
       {
         title: "AI Landscape",
-        description: <>Ollama, Llama3, Multi Agent Systems</>,
+        description: <>MCP, Multi Agent Systems, LiteLLM, Fine-tuning, AI Evals</>,
         // optional: leave the array empty if you don't want to display images
         images: [
         ],
