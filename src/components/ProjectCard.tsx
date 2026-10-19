@@ -6,6 +6,7 @@ import {
   Column,
   Flex,
   Heading,
+  Media,
   SmartLink,
   Text,
 } from "@once-ui-system/core";
@@ -35,7 +36,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <Carousel
         sizes="(max-width: 960px) 100vw, 960px"
         items={images.map((image) => ({
-          slide: image,
+          slide: (
+            <Media
+              src={image}
+              alt={title}
+              objectFit="contain"
+              fill
+            />
+          ),
           alt: title,
         }))}
       />

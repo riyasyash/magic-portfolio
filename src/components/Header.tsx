@@ -1,12 +1,12 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
 
 import { routes, display, person, about, blog, work, gallery, achievements } from "@/resources";
-import { ThemeToggle } from "./ThemeToggle";
+
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
@@ -44,6 +44,64 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const router = useRouter();
+  const [activeSection, setActiveSection] = useState("home");
+
+  const sections = ["home", "about", "work", "blog", "achievements"];
+
+  const scrollToSection = (e: React.MouseEvent, id: string) => {
+    if (e) e.preventDefault();
+    if (pathname !== "/") {
+      router.push(`/#${id}`);
+      return;
+    }
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    try {
+      window.history.replaceState(null, "", id === "home" ? "/" : `#${id}`);
+    } catch {}
+    setActiveSection(id);
+  };
+
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const updateFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && sections.includes(hash)) setActiveSection(hash);
+      else if (window.scrollY < 80) setActiveSection("home");
+    };
+    updateFromHash();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    const onScroll = () => {
+      if (window.scrollY < 80) setActiveSection("home");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [pathname]);
 
   return (
     <>
@@ -75,7 +133,7 @@ export const Header = () => {
           >
             <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton prefixIcon="home" href="/#home" selected={activeSection === "home"} onClick={(e: any) => scrollToSection(e, "home")} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
@@ -83,15 +141,17 @@ export const Header = () => {
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="person"
-                    href="/about"
+                    href="/#about"
                     label={about.label}
-                    selected={pathname === "/about"}
+                    selected={activeSection === "about"}
+                    onClick={(e: any) => scrollToSection(e, "about")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="person"
-                    href="/about"
-                    selected={pathname === "/about"}
+                    href="/#about"
+                    selected={activeSection === "about"}
+                    onClick={(e: any) => scrollToSection(e, "about")}
                   />
                 </>
               )}
@@ -100,32 +160,17 @@ export const Header = () => {
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
-                    href="/work"
+                    href="/#work"
                     label={work.label}
-                    selected={pathname.startsWith("/work")}
+                    selected={activeSection === "work"}
+                    onClick={(e: any) => scrollToSection(e, "work")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
-                  />
-                </>
-              )}
-              {routes["/blog"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="book"
-                    href="/blog"
-                    label={blog.label}
-                    selected={pathname.startsWith("/blog")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="book"
-                    href="/blog"
-                    selected={pathname.startsWith("/blog")}
+                    href="/#work"
+                    selected={activeSection === "work"}
+                    onClick={(e: any) => scrollToSection(e, "work")}
                   />
                 </>
               )}
@@ -134,15 +179,36 @@ export const Header = () => {
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="rocket"
-                    href="/achievements"
+                    href="/#achievements"
                     label={achievements.label}
-                    selected={pathname.startsWith("/achievements")}
+                    selected={activeSection === "achievements"}
+                    onClick={(e: any) => scrollToSection(e, "achievements")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="rocket"
-                    href="/achievements"
-                    selected={pathname.startsWith("/achievements")}
+                    href="/#achievements"
+                    selected={activeSection === "achievements"}
+                    onClick={(e: any) => scrollToSection(e, "achievements")}
+                  />
+                </>
+              )}
+              {routes["/blog"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="book"
+                    href="/#blog"
+                    label={blog.label}
+                    selected={activeSection === "blog"}
+                    onClick={(e: any) => scrollToSection(e, "blog")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="book"
+                    href="/#blog"
+                    selected={activeSection === "blog"}
+                    onClick={(e: any) => scrollToSection(e, "blog")}
                   />
                 </>
               )}
@@ -163,12 +229,6 @@ export const Header = () => {
                   />
                 </>
               )} */}
-              {display.themeSwitcher && (
-                <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
-                  <ThemeToggle />
-                </>
-              )}
             </Flex>
           </Flex>
         </Flex>

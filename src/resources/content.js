@@ -6,22 +6,11 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Senior Staff Software Engineer",
+  role: "Staff Software Engineer II",
   avatar: "/images/DP.png",
   email: "riyasyash@gmail.com",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Hindi", "Malayalam", "Tamil", "Kannada", "French"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
-    </>
-  ),
 };
 
 const social = [
@@ -63,12 +52,12 @@ const home = {
   headline: <>Engineer at heart, innovator by habit.</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Cluster Orchestrator</strong></>,
-    href: "/work/cluster-orchestrator-for-kubernetes-autoscaling",
+    title: <>Recent project: <strong className="ml-4">Cost Management Agent</strong></>,
+    href: "/work/cost-management-agent",
   },
   subline: (
     <>
-      I'm Riyas, a Senior Staff Software Engineer at <a href="https://www.harness.io/">Harness.io</a>, I write code, design systems, and think like a product owner. <br/>I love building things that solve real-world problems with AI and make a meaningful difference.
+      I'm Riyas, a Staff Software Engineer II at <a href="https://www.harness.io/">Harness.io</a>, I write code, design systems, and think like a product owner. <br/>I love building things that solve real-world problems with AI and make a meaningful difference.
     </>
   ),
 };
@@ -106,33 +95,87 @@ I’m not just writing backend logic or frontend views — I’m helping shape p
     experiences: [
       {
         company: "Harness.io",
-        timeframe: "2020 Nov- Present",
-        role: "Senior Staff Software Engineer",
-        achievements: [
-          <>
-            Developed an engineering efficiency AI agent which auto tags the user AI sessions from different providers to corresponding JIRA tickets and optimised it using Zero-Shot classifier Laya.
-          </>,
-          <>
-            Developed AI Cost Governance Solution for managing and enforcing AI User Budgets across different providers. Scaled up to server 2000 internal users in the first month. 
-          </>,
-          <>
-            Developed Kubernetes Cluster Orchestrator from scratch for bridging gaps in existing node autoscaling solutions like Karpenter and Cluster Autoscaler. Customers can now make use of more spot machines in the cluster and save a bomb
-          </>,
-          <>
-            Developed Kuberenetes AutoStopping Solution from scratch for scaling down Kubernetes workloads when they are not in use, saving more than 70% of Non production cloud cost.
-          </>,
-          <>
-            Mentored engineers across backend, infra, and product teams, fostering a hands-on engineering culture.
-          </>
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          // {
-          //   src: "/images/projects/project-01/cover-01.jpg",
-          //   alt: "Once UI Project",
-          //   width: 16,
-          //   height: 9,
-          // },
+        roles: [
+          {
+            role: "Staff Software Engineer II",
+            timeframe: "2026 May - Present",
+            achievements: [
+              <>
+                Spearheaded the new swimlane dedicated to AI Cost Optimization.  
+              </>,
+              <>
+                Launched "User Budgets," a product under the Cloud and AI Cost Management module to manage AI consumption.  
+              </>,
+              <>
+                Implemented a system to block users from AI providers upon budget breaches, enhancing cost control.
+              </>
+            ],
+            images: [],
+          },
+          {
+            role: "Staff Software Engineer",
+            timeframe: "2024 May - 2026 Apr",
+            achievements: [
+              <>Led the Cluster Orchestrator swimlane from both the Engineering and Product fronts, delivering multiple features to make Kubernetes autoscaling smarter, cost-efficient, and user-friendly.
+              </>,
+              <>
+                Improved Spot orchestration handling and seamless node replacement to enhance reliability.
+              </>,
+              <>
+              Built support for leveraging underutilized reserved capacity during cluster scaling to maximize cost efficiency.
+              </>,
+              <>Integrated first-class user experiences directly into the Cluster Orchestrator UI for simplified visibility and control..</>,
+              <>Implemented Vertical Pod Autoscaling (VPA) for intelligent workload resizing based on live resource utilization.</>,
+              <>Designed and shipped Bin Packing algorithms for optimal workload placement and reduced compute waste.</>,
+              <>Partnered closely with beta customers to identify pain points and shape production-grade solutions.</>,
+              <>Established a weekly cadence with customer champions to drive adoption and gather actionable feedback.</>,
+              <>Collaborated with Product and UX teams to design standout features that improved adoption across large-scale Kubernetes users.</>,
+              <>Mentored junior engineers across varied experience levels through design sessions, code reviews, and architectural guidance.</>
+            ],
+            images: [],
+          },
+          {
+            role: "Senior Software Engineer II",
+            timeframe: "2022 Aug - 2024 Apr",
+            achievements: [
+              <>Kubernetes AutoStopping Feature: Introduced Inline Dependencies, drastically reducing configuration overhead and rule counts while maintaining cost savings. Developed innovative solutions for improved service routing and enhanced the stability of the AutoStopping Controller by addressing edge cases.
+              </>,
+              <>
+                AWS AutoStopping Feature: Improved spot interruption handling and managed API throttling errors, resolving significant challenges for larger customers. Implemented support for multiple custom domains in port configurations, showcasing expertise in AWS ALBs.
+              </>,
+              <>
+              Developer Experience: Revamped the build and test pipeline, achieving nearly 90% test coverage and reducing test run times by 17 minutes. Took ownership of maintaining and optimizing build and test pipelines, ensuring up-to-date security and efficiency.
+              </>,
+              <>These initiatives have collectively enhanced system performance, stability, and developer productivity, contributing to the overall success and efficiency of our operations.</>
+            ],
+            images: [],
+          },
+          {
+            role: "Senior Software Engineer",
+            timeframe: "2021 Nov - 2022 Aug",
+            achievements: [
+              <>Implemented next generation cloud AutoStopping. Built AutoStopping Kubernetes operator. Added support for Kubernetes AutoStopping. Integrated Lightwing components to Harness’s CCM UI. Added pipelines for building and deploying the Lightwing services to Kubernetes. Helping customers with setup and onboarding.
+              </>,
+              <>
+                Collaborated across backend, infra, and product teams to deliver reliable, customer-facing functionality.
+              </>,
+            ],
+            images: [],
+          },
+          {
+            role: "Software Engineer",
+            timeframe: "2020 Nov - 2021 Nov",
+            achievements: [
+              <>
+                Lightwing got acquired by Harness and we are continuing to integrate the Lightwing tech with Harness CCM to build the industry leading next generation cloud cost optimisation solution.
+              </>,
+
+              <>
+                Extensively working on Go and React for the daily tasks. The core team remains the same and contributions to design and architecture is better than ever. Working everyday on cloud providers like AWS, Azure and GCP
+              </>
+            ],
+            images: [],
+          },
         ],
       },
       {
@@ -141,7 +184,7 @@ I’m not just writing backend logic or frontend views — I’m helping shape p
         role: "Founding Engineer",
         achievements: [
           <>
-            Designed AutoStopping solution for AWS ec2 and DigitalOcean Droplets saving customers more than 70% of Non Production Cloud Cost
+            Designed AutoStopping solution for AWS EC2 and DigitalOcean Droplets saving customers more than 70% of Non-production cloud cost
           </>,
           <>
            Being the founding engineer in an early stage startup in the cloud cost optimization space was exciting and challenging. I have the opportunity to interact with the end users to understand their varied usecases and problems to build and shape a product which makes enormous impacts on their cloud usage.
@@ -254,23 +297,28 @@ const achievements = {
   label: "Achievements",
   title: `Things that I am Proud Of`,
   description: `Here’s are the small things in life that I am proud of`,
-  images: [
+  items: [
     {
-      src: "/images/achievements/lw-github.png",
-      alt: "More than 40 Lakhs lines of code contributed in Lightwing (Harness CCM) Project",
-      orientation: "horizontal",
+      title: "40+ Lakh Lines of Code",
+      description: "Contributed more than 40 lakh lines of code in the Lightwing (Harness CCM) project before AI era.",
+      icon: "github",
     },
     {
-      src: "/images/achievements/autostopping-patent.png",
-      alt: "Received Patent for the AutoStopping Solution that we build from scratch",
-      orientation: "horizontal",
+      title: "Patent Awarded",
+      description: "Received a patent for the AutoStopping solution built from scratch.",
+      icon: "document",
     },
     {
-      src: "/images/achievements/arctic-vault.png",
-      alt: "Arctic Code Vault Contributor",
-      orientation: "vertical",
+      title: "Arctic Code Vault Contributor",
+      description: "Source code preserved in the GitHub Arctic Code Vault for future generations.",
+      icon: "github",
     },
-  ]
+    {
+      title: "Startup Acquired",
+      description: "Lightwing.io, where I was a founding engineer, was acquired by Harness.io.",
+      icon: "rocket",
+    },
+  ],
 };
 
 const gallery = {
@@ -324,4 +372,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery, achievements };
+export { person, social, home, about, blog, work, gallery, achievements };
