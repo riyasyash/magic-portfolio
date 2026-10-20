@@ -307,16 +307,24 @@ const achievements = {
       title: "Patent Awarded",
       description: "Received a patent for the AutoStopping solution built from scratch.",
       icon: "document",
+      link: "https://www.harness.io/blog/harness-receives-patent-for-cloud-autostopping-a-new-standard-for-intelligent-cost-optimization"
     },
     {
       title: "Arctic Code Vault Contributor",
       description: "Source code preserved in the GitHub Arctic Code Vault for future generations.",
+      link: "https://github.com/riyasyash?achievement=arctic-code-vault-contributor&tab=achievements",
       icon: "github",
     },
     {
       title: "Startup Acquired",
       description: "Lightwing.io, where I was a founding engineer, was acquired by Harness.io.",
       icon: "rocket",
+      link: "https://yourstory.com/2021/09/jyoti-bansal-harness-acquires-cloudtech-startup-lightwing-tech30"
+    },
+    {
+      title: "Hackathon Winner",
+      description: "Won multiple hackathons in Harness for projects in various verticals. (SaaS spend optimization, Cloud Cost Management, Worker Agent to auto tag cost categories)",
+      icon: "trophy",
     },
   ],
 };
@@ -372,4 +380,21 @@ const gallery = {
   ],
 };
 
-export { person, social, home, about, blog, work, gallery, achievements };
+const certifications = {
+  path: "/certifications",
+  label: "Certifications",
+  title: "Certifications",
+  description: `Professional certifications earned by ${person.name}`,
+  items: [
+    // Add certifications here, e.g.:
+    {
+      title: "Develop a Multi-Agent Research Assistant Using AutoGen",
+      issuer: "Educative",
+      date: "Jan 2026",
+      credential: "https://www.educative.io/verify-certificate/O7rwGNTwOLVMgQZrVsAO2VBvmz4qtB",
+      icon: "document",
+    },
+  ],
+};
+
+export { person, social, home, about, blog, work, gallery, achievements, certifications };

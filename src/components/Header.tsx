@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery, achievements } from "@/resources";
+import { routes, display, person, about, blog, work, gallery, achievements, certifications } from "@/resources";
 
 import styles from "./Header.module.scss";
 
@@ -47,7 +47,7 @@ export const Header = () => {
   const router = useRouter();
   const [activeSection, setActiveSection] = useState("home");
 
-  const sections = ["home", "about", "work", "blog", "achievements"];
+  const sections = ["home", "about", "work", "certifications", "achievements", "blog"];
 
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     if (e) e.preventDefault();
@@ -171,6 +171,25 @@ export const Header = () => {
                     href="/#work"
                     selected={activeSection === "work"}
                     onClick={(e: any) => scrollToSection(e, "work")}
+                  />
+                </>
+              )}
+              {routes["/certifications"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="document"
+                    href="/#certifications"
+                    label={certifications.label}
+                    selected={activeSection === "certifications"}
+                    onClick={(e: any) => scrollToSection(e, "certifications")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="document"
+                    href="/#certifications"
+                    selected={activeSection === "certifications"}
+                    onClick={(e: any) => scrollToSection(e, "certifications")}
                   />
                 </>
               )}

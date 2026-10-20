@@ -1,10 +1,10 @@
-import { Column, Flex, Grid, Heading, Icon, Text } from "@once-ui-system/core";
+import { Column, Flex, Grid, Heading, Icon, SmartLink, Text } from "@once-ui-system/core";
 import { achievements } from "@/resources";
 
 export default function AchievementCards() {
   return (
     <Grid columns="2" mobileColumns="1" fillWidth gap="16">
-      {achievements.items.map((item, index) => (
+      {achievements.items.map((item: any, index: number) => (
         <Column
           key={`${item.title}-${index}`}
           fillWidth
@@ -30,6 +30,15 @@ export default function AchievementCards() {
           <Text variant="body-default-s" onBackground="neutral-weak">
             {item.description}
           </Text>
+          {item.link && (
+            <SmartLink
+              suffixIcon="arrowUpRightFromSquare"
+              style={{ margin: "0", width: "fit-content" }}
+              href={item.link}
+            >
+              <Text variant="body-default-s">{item.linkLabel || "View"}</Text>
+            </SmartLink>
+          )}
         </Column>
       ))}
     </Grid>

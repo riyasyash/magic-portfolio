@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes, work, blog, achievements } from "@/resources";
+import { home, about, person, baseURL, routes, work, blog, achievements, certifications } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
 import { AboutContent } from "@/components";
@@ -16,6 +16,7 @@ export async function generateMetadata() {
   });
 }
 import AchievementCards from "@/components/achievements/AchievementCards";
+import CertificationCards from "@/components/certifications/CertificationCards";
 
 export default function Home() {
   return (
@@ -94,6 +95,18 @@ export default function Home() {
             </Heading>
             <Text onBackground="neutral-weak" marginBottom="l">{work.description}</Text>
             <Projects />
+          </Column>
+        </section>
+      )}
+
+      {routes["/certifications"] && (
+        <section id="certifications" style={{ width: "100%" }}>
+          <Column maxWidth="l" gap="m">
+            <Heading as="h2" variant="display-strong-s" marginBottom="m">
+              {certifications.title}
+            </Heading>
+            <Text onBackground="neutral-weak" marginBottom="l">{certifications.description}</Text>
+            <CertificationCards />
           </Column>
         </section>
       )}

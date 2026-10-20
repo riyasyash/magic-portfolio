@@ -8,6 +8,7 @@ export {
   work,
   gallery,
   achievements,
+  certifications,
 } from "./content";
 
 export { display, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle } from "./once-ui.config";
